@@ -1,0 +1,7 @@
+stages:
+  - build
+  - deploy
+
+build_job:
+  stage: build
+  script: echo "test"
