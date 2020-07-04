@@ -78,7 +78,7 @@ github: publish
 	ghp-import -m "Generate Pelican site" -b $(GITHUB_PAGES_BRANCH) $(OUTPUTDIR)
 	# git remote set-url origin git@github.com:SaadiKarim/SaadiKarim.github.io.git
 	git remote set-url origin https://SaadiKarim:Chavalafo%4097400@github.com/SaadiKarim/SaadiKarim.github.io.git
-	git push origin $(GITHUB_PAGES_BRANCH)
+	git push origin $(GITHUB_PAGES_BRANCH) -f
 
 
 .PHONY: html help clean regenerate serve serve-global devserver publish github
