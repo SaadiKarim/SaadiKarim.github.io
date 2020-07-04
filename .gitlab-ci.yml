@@ -20,6 +20,7 @@ stages:
 # image: python:2.7-alpine
 
 build_job:
+  stage: build
   tags:
     - docker
   script:
@@ -29,6 +30,7 @@ build_job:
       - output/
       
 publish_job:
+  stage: publish
   tags:
     - docker
   script:
