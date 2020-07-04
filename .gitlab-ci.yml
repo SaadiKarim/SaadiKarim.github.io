@@ -2,9 +2,9 @@
 # Full project: https://gitlab.com/pages/pelican
 image: apihackers/pelican:latest
 
-# stages:
-#   - build
-#   - publish
+stages:
+  - build
+  - publish
   
 # pages_job:
 #   tags:
@@ -19,11 +19,17 @@ image: apihackers/pelican:latest
 
 # image: python:2.7-alpine
 
-pages:
+build_job:
   tags:
     - docker
   script:
-    - pelican -s publishconf.py
+    - pelican -s pelicanconf.py
   artifacts:
     paths:
       - output/
+      
+publish_job:
+  tags:
+    - docker
+  script:
+    - pelican content -s publishconf.py
