@@ -34,5 +34,6 @@ publish_job:
   tags:
     - docker
   script:
+    - apt-get install make
     - pip3 install ghp-import
     - make github
