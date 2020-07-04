@@ -12,6 +12,7 @@ pages_job:
   stage: build
   script:
     - pelican content
+    - echo "test"
   artifacts:
     paths:
       - public/
