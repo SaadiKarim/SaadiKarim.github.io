@@ -34,4 +34,5 @@ publish_job:
   tags:
     - docker
   script:
-    - pelican content -s publishconf.py
+    - pip3 install ghp-import
+    - make github
