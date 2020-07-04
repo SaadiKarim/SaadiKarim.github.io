@@ -7,8 +7,8 @@ env_job:
   stage: env
   script: 
     - export DEBIAN_FRONTEND=noninteractive
-    - apt-get -qq update
-    - apt-get -qq install -y python3-pip git wget
+    - sudo apt-get -qq update
+    - sudo apt-get -qq install -y python3-pip git wget
     - pip3 install pelican[Markdown]
     - export PATH=$PATH:/home/vagrant/.local/bin
 
