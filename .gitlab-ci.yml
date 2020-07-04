@@ -34,6 +34,6 @@ publish_job:
   tags:
     - docker
   script:
-    - apk add make gi
+    - apk add make git
     - git remote set-url origin git@github.com:SaadiKarim/SaadiKarim.github.io.git
     - git push orgin master -f
