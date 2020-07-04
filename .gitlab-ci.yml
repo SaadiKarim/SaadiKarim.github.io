@@ -4,4 +4,4 @@ stages:
 
 build_job:
   stage: build
-  script: echo "test"
+  script: pelican content
