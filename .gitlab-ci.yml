@@ -1,17 +1,15 @@
+# This file is a template, and might need editing before it works on your project.
+# Full project: https://gitlab.com/pages/pelican
+image: apihackers/pelican:latest
+
 stages:
-  - env
-  - build
-  - deploy
-
-env_job:
-  stage: env
-  script: 
-    - export DEBIAN_FRONTEND=noninteractive
-    - sudo apt-get -qq update
-    - sudo apt-get -qq install -y python3-pip git wget
-    - pip3 install pelican[Markdown]
-    - export PATH=$PATH:/home/vagrant/.local/bin
-
-build_job:
+    - build
+    - publish
+    
+pages:
     stage: build
-    script: pelican content
+    script:
+        - pelican content
+      artifacts:
+        paths:
+          - public/
