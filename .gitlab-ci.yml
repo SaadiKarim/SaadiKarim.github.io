@@ -36,4 +36,4 @@ publish_job:
   script:
     - apk add make git
     - git remote set-url origin git@github.com:SaadiKarim/SaadiKarim.github.io.git
-    - git push orgin master -f
+    - git push master -f
