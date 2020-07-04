@@ -3,13 +3,12 @@
 image: apihackers/pelican:latest
 
 stages:
-    - build
-    - publish
-    
+  - build
+  - publish
 pages:
-    stage: build
-    script:
-        - pelican content
-      artifacts:
-        paths:
-          - public/
+  stage: build
+  script:
+    - pelican content
+  artifacts:
+    paths:
+      - public/
