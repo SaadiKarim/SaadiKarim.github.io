@@ -1,20 +1,15 @@
 stages:
-    - env
-    - build
-    - deploy
+  - env
+  - build
+  - deploy
 
 env_job:
-    stage: env
-    script: export DEBIAN_FRONTEND=noninteractive
-            # -qq No output except for errors
-            -apt-get -qq update
-            
-            -apt-get -qq install -y python3-pip git wget
-            # Pelican
-            -pip3 install pelican[Markdown]
-            
-            # Add Pelical locatio to PATH
-            -export PATH=$PATH:/home/vagrant/.local/bin
+  stage: env
+  script: export DEBIAN_FRONTEND=noninteractive
+          -apt-get -qq update
+          -apt-get -qq install -y python3-pip git wget
+          -pip3 install pelican[Markdown]
+          -export PATH=$PATH:/home/vagrant/.local/bin
 
 build_job:
     stage: build
